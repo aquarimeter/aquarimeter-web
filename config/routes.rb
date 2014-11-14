@@ -22,31 +22,31 @@ Rails.application.routes.draw do
   #     member do
   #       get 'short'
   #       post 'toggle'
-  #     end
+  #     mount MailPreview => 'mail_view' if Rails.env.development?end
   #
   #     collection do
   #       get 'sold'
-  #     end
-  #   end
+  #     mount MailPreview => 'mail_view' if Rails.env.development?end
+  #   mount MailPreview => 'mail_view' if Rails.env.development?end
 
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
   #     resource :seller
-  #   end
+  #   mount MailPreview => 'mail_view' if Rails.env.development?end
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
   #     resources :comments
   #     resources :sales do
   #       get 'recent', on: :collection
-  #     end
-  #   end
+  #     mount MailPreview => 'mail_view' if Rails.env.development?end
+  #   mount MailPreview => 'mail_view' if Rails.env.development?end
 
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
-  #   end
+  #   mount MailPreview => 'mail_view' if Rails.env.development?end
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
 
@@ -55,5 +55,5 @@ Rails.application.routes.draw do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
-  #   end
-end
+  #   mount MailPreview => 'mail_view' if Rails.env.development?end
+mount MailPreview => 'mail_view' if Rails.env.development?end
