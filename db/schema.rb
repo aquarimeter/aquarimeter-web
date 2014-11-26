@@ -45,12 +45,12 @@ ActiveRecord::Schema.define(version: 20141119001542) do
   add_index "sensor_readings", ["aquariums_id"], name: "index_sensor_readings_on_aquariums_id"
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                              null: false
+    t.string   "encrypted_password",                 null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -59,11 +59,11 @@ ActiveRecord::Schema.define(version: 20141119001542) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.integer  "failed_attempts",        default: 0,  null: false
+    t.integer  "failed_attempts",        default: 0, null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
-    t.string   "first_name",             default: "", null: false
-    t.string   "last_name",              default: "", null: false
+    t.string   "first_name",                         null: false
+    t.string   "last_name",                          null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "role"
