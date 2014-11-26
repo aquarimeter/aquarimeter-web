@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20141119001542) do
 
   create_table "aquariums", force: true do |t|
     t.integer  "users_id"
-    t.string   "name"
+    t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -24,20 +24,20 @@ ActiveRecord::Schema.define(version: 20141119001542) do
   add_index "aquariums", ["users_id"], name: "index_aquariums_on_users_id"
 
   create_table "images", force: true do |t|
-    t.string   "image"
-    t.string   "description"
-    t.string   "processed_image"
-    t.string   "unprocessed_image"
-    t.boolean  "avatar"
-    t.integer  "aquariums_id"
+    t.string   "image",                             null: false
+    t.string   "description",                       null: false
+    t.string   "processed_image",                   null: false
+    t.string   "unprocessed_image",                 null: false
+    t.boolean  "avatar",            default: false, null: false
+    t.integer  "aquariums_id",                      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "sensor_readings", force: true do |t|
     t.integer  "aquariums_id"
-    t.decimal  "ph"
-    t.decimal  "temperature"
+    t.decimal  "ph",           null: false
+    t.decimal  "temperature",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -62,8 +62,8 @@ ActiveRecord::Schema.define(version: 20141119001542) do
     t.integer  "failed_attempts",        default: 0,  null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "first_name",             default: "", null: false
+    t.string   "last_name",              default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "role"
