@@ -11,22 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124081930) do
+ActiveRecord::Schema.define(version: 20141119001542) do
 
   create_table "aquariums", force: true do |t|
-    t.integer "users_id"
-    t.string  "name"
-    t.string  "image"
+    t.integer  "users_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "aquariums", ["name"], name: "index_aquariums_on_name"
   add_index "aquariums", ["users_id"], name: "index_aquariums_on_users_id"
 
+  create_table "images", force: true do |t|
+    t.string   "image"
+    t.string   "description"
+    t.string   "processed_image"
+    t.string   "unprocessed_image"
+    t.boolean  "avatar"
+    t.integer  "aquariums_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sensor_readings", force: true do |t|
     t.integer  "aquariums_id"
     t.decimal  "ph"
     t.decimal  "temperature"
-    t.datetime "timestamp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "sensor_readings", ["aquariums_id"], name: "index_sensor_readings_on_aquariums_id"
