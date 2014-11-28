@@ -144,6 +144,8 @@ GEM
     kgio (2.9.2)
     launchy (2.4.3)
       addressable (~> 2.3)
+    letter_opener (1.2.0)
+      launchy (~> 2.2)
     libv8 (3.16.14.7)
     listen (2.8.0)
       celluloid (>= 0.15.2)
@@ -390,6 +392,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
+  letter_opener
   mail_view
   mailcatcher
   mini_magick
