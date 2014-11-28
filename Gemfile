@@ -21,8 +21,8 @@ gem 'therubyracer', :platform=>:ruby
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'upmin-admin'
-gem "mini_magick"
-gem "carrierwave"
+gem 'mini_magick'
+gem 'carrierwave'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -42,6 +42,7 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
+  gem 'letter_opener'
 end
 group :development, :test do
   gem 'factory_girl_rails'
