@@ -78,5 +78,4 @@ npm-debug.log
 **.swp
 
 # Environment files that may contain sensitive data
-.env
-.powenv
+application.yml
