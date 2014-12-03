@@ -20,6 +20,7 @@
 MANDRILL_USERNAME: Your_Username
 MANDRILL_APIKEY: Your_API_Key
 DOMAIN_NAME: example.com
-ADMIN_NAME: First User
+ADMIN_FIRST_NAME: Admin
+ADMIN_LAST_NAME: User
 ADMIN_EMAIL: user@example.com
 ADMIN_PASSWORD: changeme
