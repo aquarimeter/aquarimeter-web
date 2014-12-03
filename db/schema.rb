@@ -15,7 +15,9 @@ ActiveRecord::Schema.define(version: 20141119001542) do
 
   create_table "aquariums", force: true do |t|
     t.integer  "users_id"
-    t.string   "name",       null: false
+    t.string   "name",            null: false
+    t.decimal  "ideal_temp_low",  null: false
+    t.decimal  "ideal_temp_high", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

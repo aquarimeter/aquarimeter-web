@@ -3,6 +3,8 @@ class CreateInitialDataModel < ActiveRecord::Migration
     create_table :aquariums do |t|
       t.references :users
       t.string :name, :unique =>  true, :null => false
+      t.decimal :ideal_temp_low, :null => false
+      t.decimal :ideal_temp_high, :null => false
       t.timestamps
     end
 
