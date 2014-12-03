@@ -25,7 +25,7 @@ module AquarimeterWeb
         controller_specs: false,
         request_specs: false
       g.fixture_replacement :factory_girl, dir: "spec/factories"
-      g.template_engine :slim
+      g.template_system :slim
     end
 
     # Settings in config/environments/* take precedence over those specified here.
