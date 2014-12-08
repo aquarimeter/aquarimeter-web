@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141119001542) do
+ActiveRecord::Schema.define(version: 20141206071635) do
 
   create_table "aquariums", force: true do |t|
-    t.integer  "users_id"
-    t.string   "name",            null: false
-    t.decimal  "ideal_temp_low",  null: false
-    t.decimal  "ideal_temp_high", null: false
+    t.integer  "user_id",                                 null: false
+    t.string   "name",                                    null: false
+    t.decimal  "ideal_temp_low",  precision: 5, scale: 2, null: false
+    t.decimal  "ideal_temp_high", precision: 5, scale: 2, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "aquariums", ["name"], name: "index_aquariums_on_name"
-  add_index "aquariums", ["users_id"], name: "index_aquariums_on_users_id"
+  add_index "aquariums", ["user_id"], name: "index_aquariums_on_user_id"
 
   create_table "images", force: true do |t|
     t.string   "image",                             null: false
@@ -31,20 +31,22 @@ ActiveRecord::Schema.define(version: 20141119001542) do
     t.string   "processed_image",                   null: false
     t.string   "unprocessed_image",                 null: false
     t.boolean  "avatar",            default: false, null: false
-    t.integer  "aquariums_id",                      null: false
+    t.integer  "aquarium_id",                       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "images", ["aquarium_id"], name: "index_images_on_aquarium_id"
 
   create_table "sensor_readings", force: true do |t|
-    t.integer  "aquariums_id"
-    t.decimal  "ph",           null: false
-    t.decimal  "temperature",  null: false
+    t.integer  "aquarium_id",                         null: false
+    t.decimal  "ph",          precision: 5, scale: 2, null: false
+    t.decimal  "temperature", precision: 5, scale: 2, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "sensor_readings", ["aquariums_id"], name: "index_sensor_readings_on_aquariums_id"
+  add_index "sensor_readings", ["aquarium_id"], name: "index_sensor_readings_on_aquarium_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                              null: false
@@ -69,8 +71,10 @@ ActiveRecord::Schema.define(version: 20141119001542) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "role"
+    t.string   "authentication_token"
   end
 
+  add_index "users", ["authentication_token"], name: "index_users_on_authentication_token"
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

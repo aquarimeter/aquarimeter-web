@@ -10,7 +10,13 @@ describe User do
 
   it "#email returns a string" do
     expect(@user.email).to match 'user@example.com'
+  end
+
+  it "has a #first name" do
     expect(@user.first_name).to match 'A'
+  end
+
+  it "has a #last_name" do
     expect(@user.last_name).to match 'User'
   end
 end
