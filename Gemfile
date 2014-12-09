@@ -25,7 +25,9 @@ gem 'therubyracer', :platform=>:ruby
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'upmin-admin'
+gem 'paper_trail'
 gem 'devise-token_authenticatable'
+gem 'flot-rails'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
