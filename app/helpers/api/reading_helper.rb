@@ -1,0 +1,2 @@
+module Api::ReadingHelper
+end
