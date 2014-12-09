@@ -1,16 +1,16 @@
-doctype html
-html
+doctype transitional
+html[xmlns="http://www.w3.org/1999/xhtml"]
   head
-    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    meta[http-equiv="Content-Type" content="text/html; charset=utf-8"]
     title
-      = content_for?(:title) ? yield(:title) : 'Aquarimeter Web'
-    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Aquarimeter Web'}"
-    == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => true
-    == javascript_include_tag 'application', 'data-turbolinks-track' => true
-    == csrf_meta_tags
+      | Aquarimeter Web
+    = stylesheet_link_tag    "application", media: "all"
+    link[href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css"]
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    script[type="text/javascript"]
+      |  $(function() { var d1 = []; for (var i = 0; i < 14; i += 0.5) { d1.push([i, Math.sin(i)]); } var d2 = [[0, 3], [4, 8], [8, 5], [9, 13]]; // A null signifies separate line segments var d3 = [[0, 12], [7, 12], null, [7, 2.5], [12, 2.5]]; $.plot("#placeholder", [ d2 ]); // Add the Flot version string to the footer $("#footer").prepend("Flot " + $.plot.version + " – "); });
   body
-    header
-      == render 'layouts/navigation'
     main[role="main"]
-      == render 'layouts/messages'
       == yield
+

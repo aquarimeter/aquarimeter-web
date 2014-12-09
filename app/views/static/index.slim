@@ -1,0 +1,119 @@
+
+    #header
+      #logo
+        -#img[src="logo.jpg" width="108" height="97" alt="Aquarimeter"]
+        = image_tag "logo.jpg", width:"108", height:"97", alt: "Aquarimeter"
+      #title.titletext
+        | Aquarimeter Web
+      #nav
+        #home
+          a[href="#"]
+            | Home
+        #login
+          a[href="#"]
+            | Login
+        #history
+          a[href="#"]
+            | History
+        #help
+          a[href="#"]
+            | Help
+      .clear
+
+      #header-mid
+        #title-mid
+          | Clopperium
+        #time-right
+          | 04:16:05 GMT 9/9/2013
+      .clear
+
+      #content
+        #menu
+          #monitoring-text
+            | Monitoring 
+          #general-text
+            a[href="general.html"]
+              | General
+          #snapshots-text
+            a[href="snapshots.html"]
+              | Snapshots
+          #control-text
+            | Control
+          #temp-text
+            a[href="temp.html"]
+              | Temperature
+          #footer-copyright
+            | Aquarimeter
+            br
+            |  Copyright © 2014
+        #mid-content
+          #general
+            #header-general
+              | General
+            .clear
+
+            #content-general-left
+              strong
+                | Temperature: 
+              |  76 °F / 24.44°C
+              br
+              br
+              strong
+                | Avg 1 Hour: 
+              |  76 °F / 24.44°C
+              br
+              br
+              strong
+                | Avg 6 Hours: 
+              |  76 °F / 24.44°C
+              br
+              br
+              strong
+                | Avg 12 Hours: 
+              |  76 °F / 24.44°C
+              br
+              br
+              strong
+                | Avg 24 Hours: 
+              |  76 °F / 24.44°C 
+            #content-general-right
+              strong
+                | pH Level: 
+              | 8.2pH 
+              br
+              br
+              strong
+                | Avg 1 Hour: 
+              |  8.2pH
+              br
+              br
+              strong
+                | Avg 6 Hours: 
+              |  8.2pH
+              br
+              br
+              strong
+                | Avg 12 Hours: 
+              |  8.2pH
+              br
+              br
+              strong
+                | Avg 24 Hours: 
+              |  8.2pH
+          #graphs
+            #header-graphs
+              | Graphs
+            #content-graphs
+              |        
+              input#temp[name="Temperature" type="checkbox" value="temp" checked="checked"]
+              |  Temperature 
+              input#ph[name="pH Level" type="checkbox" value="ph"]
+              | pH Level 
+              br
+              .graph-container
+                #placeholder.graph-placeholder
+          .clear
+
+          #snapshots
+            #header-snapshots
+              | Snapshots
