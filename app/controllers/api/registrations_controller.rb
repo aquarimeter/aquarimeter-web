@@ -1,15 +1,16 @@
+#http://jessewolgamott.com/blog/2012/01/19/the-one-with-a-json-api-login-using-devise/
 class Api::RegistrationsController < Api::BaseController
-
-  respond_to :json
   def create
+    @user = User.new(user_params)
 
-    user = User.new(params[:user])
-    if user.save
-      render :json=> user.as_json(:auth_token=>user.authentication_token, :email=>user.email), :status=>201
-      return
+    if @user.save
+      render json: @user.as_json, status: :created
     else
-      warden.custom_failure!
-      render :json=> user.errors, :status=>422
+      render json: @user.errors.as_json, status: :unprocessable_entity
     end
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :password, :first_name, :last_name)
   end
 end
