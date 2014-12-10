@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, {registration: "api/registration", sessions: "api/sessions"}
   namespace :api do
-    resource :sessions
-    resource :registrations
-    resource :reading, as: 'sensor_reading'
-    with_options except: [:create, :update, :destroy] do |read_only|
-      read_only.resources :reading
+    resources :registrations, only: [:create]
+    resources :sessions, only: [:create, :destroy]
+    resources :aquariums do
+      resource :readings, only: [:index, :create, :show, :new]
     end
   end
 
