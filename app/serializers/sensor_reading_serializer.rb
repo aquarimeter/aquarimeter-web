@@ -1,3 +1,3 @@
 class SensorReadingSerializer < ActiveModel::Serializer
-  attributes :id, :temperature, :ph
+  attributes :id, :aquarium_id, :temperature, :ph
 end
