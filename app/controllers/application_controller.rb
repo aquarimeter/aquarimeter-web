@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   #these includes are needed because ActionController::API doesn't include things devise needs
   include ActionController::MimeResponds
   include ActionController::ImplicitRender
-  include SimpleTokenAuthentication::ActsAsTokenAuthenticationHandler
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
