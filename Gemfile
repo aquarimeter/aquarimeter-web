@@ -2,13 +2,14 @@ source 'https://rubygems.org'
 ruby '2.1.3'
 gem 'rails', '4.1.8'
 gem 'sqlite3'
-gem 'sass-rails', '~> 4.0.3'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'mysql2'
+gem 'sass-rails'#, '~> 4.0.3'
+gem 'uglifier'#, '>= 1.3.0'
+gem 'coffee-rails'#, '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'#, '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'sdoc',          group: :doc
 gem 'spring',        group: :development
 gem "carrierwave"
 gem "mini_magick"
@@ -21,14 +22,17 @@ gem 'pundit'
 gem 'rails_admin'
 gem 'simple_form'
 gem 'slim-rails'
-gem 'therubyracer', :platform=>:ruby
+# gem 'therubyracer', :platform=>:ruby
 gem 'unicorn'
 gem 'unicorn-rails'
 gem 'upmin-admin'
 gem 'paper_trail'
-gem 'devise-token_authenticatable'
 gem 'flot-rails'
 gem 'active_model_serializers'
+gem 'devise-token_authenticatable'
+gem 'ember-rails'
+gem 'ember-source','~> 1.9.0'
+gem 'ember_script-rails', :github => 'ghempton/ember-script-rails'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

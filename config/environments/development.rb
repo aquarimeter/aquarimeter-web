@@ -1,3 +1,4 @@
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -41,7 +42,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :letter_opener # don't actually send in development.
   config.action_mailer.raise_delivery_errors = true
   # Send email in development mode?
-  config.action_mailer.perform_deliveries = true
+  config.action_mailer.perform_deliveries = false
 
 
   # Adds additional error checking when serving assets at runtime.
@@ -53,4 +54,4 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   config.wrap_parameters = true
 end
-Rails.logger = Logger.new(STDOUT)
+# Rails.logger = Logger.new(STDOUT)

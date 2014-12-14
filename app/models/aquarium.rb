@@ -4,5 +4,8 @@ class Aquarium < ActiveRecord::Base
   validates_associated :user
   has_many :sensor_readings
   belongs_to :user
+  after_create do
+    self.user = @current_user
+  end
   accepts_nested_attributes_for :sensor_readings
 end
