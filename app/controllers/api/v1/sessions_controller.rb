@@ -1,31 +1,25 @@
-# Taken from github.com/bdwain/simple_authentication_token_sample_app
-module Api
-  module V1
-    class SessionsController < Devise::SessionsController
-      respond_to :json
-      skip_before_filter :verify_authenticity_token, if: :json_request?
+class Api::V1::SessionsController < Devise::SessionsController
+  after_filter :reset_authentication_token, :only => [:create]
+  before_filter :reset_authentication_token, :only => [:destroy]
 
-      skip_before_filter :authenticate_entity_from_token!
-      skip_before_filter :authenticate_entity!
-      before_filter :authenticate_entity_from_token!, :only => [:destroy]
-      before_filter :authenticate_entity!, :only => [:destroy]
+  def reset_authentication_token
+    current_user.reset_authentication_token!
+  end
 
-      def create
-        warden.authenticate!(:scope => resource_name)
-        @user = current_user
-
-        render json: {
-                      message: 'Logged in',
-                      auth_token: @user.authentication_token
-                  }, status: :ok
-      end
+  def create
+    warden.authenticate!(:scope => resource_name)
+    @user = current_user
+    render json: @user, status: :ok, message:"logged in "
+  end
 
 
-      def destroy
-        resource.reset_authentication_token!
-        Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
-        render :status => 200, :json => {}
-      end
-    end
+  def destroy
+    resource.reset_authentication_token!
+    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
+    render :status => 200, :json => {message: "logged out successfully!"}
+  end
+
+  def reset_authentication_token
+    current_user.reset_authentication_token!
   end
 end

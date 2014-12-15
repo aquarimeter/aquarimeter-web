@@ -1,10 +1,13 @@
 class Api::V1::AquariumsController < Api::V1::BaseController
   before_filter :authenticate_user, :except => :index
 
+
   def create
     @aquarium = Aquarium.new(aquarium_params)
+    @aquarium.user = @current_user
+    puts params.pretty_print_inspect
     if @aquarium.save
-      render json: @aquarium, status: 201, location: [:api, @aquarium]
+      render json: @aquarium, status: :created
     else
       render json: @aquarium.errors, status: :unprocessable_entity
     end

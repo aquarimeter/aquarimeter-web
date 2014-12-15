@@ -1,6 +1,6 @@
 class Api::V1::BaseController < ApplicationController
   respond_to :json
-  skip_before_filter :verify_authenticity_token, if: :json_request?
+
   private
   def authenticate_user
     @current_user = User.find_by_authentication_token(params[:auth_token])
