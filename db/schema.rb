@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208093348) do
+ActiveRecord::Schema.define(version: 20141215073900) do
 
   create_table "aquariums", force: true do |t|
     t.integer  "user_id",                                 null: false
@@ -24,6 +24,20 @@ ActiveRecord::Schema.define(version: 20141208093348) do
 
   add_index "aquariums", ["name"], name: "index_aquariums_on_name", using: :btree
   add_index "aquariums", ["user_id"], name: "index_aquariums_on_user_id", using: :btree
+
+  create_table "errors", force: true do |t|
+    t.string   "usable_type"
+    t.integer  "usable_id"
+    t.text     "class_name"
+    t.text     "message"
+    t.text     "trace"
+    t.text     "target_url"
+    t.text     "referer_url"
+    t.text     "params"
+    t.text     "user_agent"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "images", force: true do |t|
     t.string   "image",                             null: false

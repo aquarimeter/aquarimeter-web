@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/RailsApps/rails_apps_pages.git
+  revision: 72f1606c8076a05404a032b0bfc067490bc491d5
+  specs:
+    rails_apps_pages (0.5.15)
+
+GIT
   remote: git://github.com/ghempton/ember-script-rails.git
   revision: 9a1f09b0c53bf51c37c35490cc76cd7dfe461234
   specs:
@@ -127,6 +133,7 @@ GEM
     ember_script-source (0.0.14)
     erubis (2.7.0)
     eventmachine (1.0.3)
+    exception_handler (0.3.45)
     execjs (2.2.2)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -268,7 +275,6 @@ GEM
       remotipart (~> 1.0)
       safe_yaml (~> 1.0)
       sass-rails (>= 4.0)
-    rails_layout (1.0.24)
     railties (4.1.8)
       actionpack (= 4.1.8)
       activesupport (= 4.1.8)
@@ -430,6 +436,7 @@ DEPENDENCIES
   ember-rails
   ember-source (~> 1.9.0)
   ember_script-rails!
+  exception_handler
   factory_girl_rails
   faker
   figaro
@@ -453,7 +460,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.1.8)
   rails_admin
-  rails_layout
+  rails_apps_pages!
   rb-fchange
   rb-fsevent
   rb-inotify
