@@ -1,11 +1,10 @@
 class Api::V1::AquariumsController < Api::V1::BaseController
-  before_filter :authenticate_user, :except => :index
+  before_filter :authenticate_user, :except => [:index,:show]
 
 
   def create
     @aquarium = Aquarium.new(aquarium_params)
     @aquarium.user = @current_user
-    puts params.pretty_print_inspect
     if @aquarium.save
       render json: @aquarium, status: :created
     else
@@ -31,12 +30,17 @@ class Api::V1::AquariumsController < Api::V1::BaseController
   end
 
   def show
-
+    @aquarium = Aquarium.find_by :name => params[:name]
+    if @aquarium
+      render json: @aquarium, status: :ok
+    else
+      render json: {error: "An aquarium with the name #{params[:name]} does not exist."}, status: :not_found
+    end
   end
 
   def index
     @aquariums = Aquarium.all
-    render json: @aquariums, success: :ok
+    render json: @aquariums, status: :ok
   end
 
   protected
