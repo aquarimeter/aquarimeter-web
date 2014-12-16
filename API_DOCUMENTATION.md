@@ -91,7 +91,8 @@ If your token is missing, or invalid then you will see the following:
 ```
 
 ##HTTP Status Codes
-
+```
 201 (accepted) - if successful.
 
 401 (Unauthorized) if an invalid token is specified
+```
