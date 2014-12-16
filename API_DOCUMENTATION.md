@@ -101,3 +101,14 @@ If your token is missing, or invalid then you will see the following:
 
 401 (Unauthorized) if an invalid token is specified
 ```
+
+## Updating an Aquarium (editing its name or ideal upper and lower temp)
+
+```
+PATCH /api/v1/aquariums/**<insert the name of your aquarium>**?auth_token=**<insert token here>**
+```
+
+````json
+{"auth_token":"HR6747C1iUM4XSRqKSsp","aquarium": {"name":"foobar"}}
+````
+
