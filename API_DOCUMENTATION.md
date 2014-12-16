@@ -1,6 +1,6 @@
 #Aquarimeter API
 
-##Register
+##Registeration API
 
 ```
 POST /api/v1/register
@@ -67,7 +67,31 @@ DELETE "/api/v1/logout?authentication_token=<token>&email=<user email>
 
 401 (Unauthorized) if an invalid token is specified
 ```
+#Aquariums#
+##Adding your Aquarium to Aquarimeter Web#
 
+````
+POST /api/v1/aquariums
+````
 
+````json
+{"auth_token":"<auth token from login>","aquarium": {"name":"foobar","ideal_temp_low":"69", "ideal_temp_high":"90"}}
+````
 
+Successful creation should yield the following:
 
+```json
+{"aquarium":{"id":8,"name":"foobar","ideal_temp_low":"69.0","ideal_temp_high":"90.0","sensor_readings":[]}}
+```
+
+If your token is missing, or invalid then you will see the following:
+
+```json
+{"error":"Token is invalid"}
+```
+
+##HTTP Status Codes
+
+201 (accepted) - if successful.
+
+401 (Unauthorized) if an invalid token is specified
