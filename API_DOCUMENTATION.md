@@ -67,7 +67,8 @@ DELETE "/api/v1/logout?authentication_token=<token>&email=<user email>
 
 401 (Unauthorized) if an invalid token is specified
 ```
-#Aquariums#
+**************************************************************************************************************************
+
 ##Adding your Aquarium to Aquarimeter Web#
 
 ````
