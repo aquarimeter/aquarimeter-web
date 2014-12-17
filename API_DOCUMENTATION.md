@@ -103,9 +103,10 @@ If your token is missing, or invalid then you will see the following:
 ```
 
 ## Updating an Aquarium (editing its name or ideal upper and lower temp)
+**Replace all values as indicicated, exclude <>**.
 
 ```
-PATCH /api/v1/aquariums/**<insert the name of your aquarium>**?auth_token=**<insert token here>**
+PATCH /api/v1/aquariums/<insert the name of your aquarium>?auth_token=<insert token here>
 ```
 
 ````json
