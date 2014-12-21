@@ -11,7 +11,8 @@ gem 'turbolinks'
 gem 'jbuilder' #, '~> 2.0'
 gem 'sdoc', group: :doc
 gem 'spring', group: :development
-gem "carrierwave"
+gem 'carrierwave'
+gem 'carrierwave_backgrounder'
 gem "mini_magick"
 gem "letter_opener"
 gem 'bootstrap-sass'
@@ -31,8 +32,15 @@ gem 'flot-rails'
 gem 'active_model_serializers'
 gem 'devise-token_authenticatable'
 gem 'ember-rails'
+gem 'emblem-rails'
 gem 'ember-source', '~> 1.9.0'
 gem 'ember_script-rails', :github => 'ghempton/ember-script-rails'
+gem 'sidekiq'
+# gem 'emblem-rails'
+gem 'gaffe'
+gem 'kaminari'
+gem 'api-pagination'
+gem 'goldiloader'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms => [:mri_21]
@@ -47,7 +55,6 @@ group :development do
   gem 'mail_view'
   gem 'mailcatcher'
   gem 'quiet_assets'
-  gem 'exception_handler'
   gem 'rb-fchange', :require => false
   gem 'rb-fsevent', :require => false
   gem 'rb-inotify', :require => false
@@ -63,6 +70,7 @@ group :development, :test do
   gem 'rspec-rails'
 end
 group :test do
+  gem 'airborne'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
