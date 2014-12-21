@@ -30,7 +30,6 @@ POST /api/v1/login
 {"user":{"email":"some.fake.user@aquarimeter.rocks","password":"password123"}}
 ```
 ## Returns as JSON
-- Username 
 - auth_token **<-- SAVE THIS**
 - All aquariums which were registered by the user and all associated sensor readings 
 
