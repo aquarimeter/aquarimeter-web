@@ -3,7 +3,8 @@ class Api::V1::ReadingsController < Api::V1::BaseController
   before_filter :set_aquarium
 
   def show
-
+    @readings = SensorReading.where(:aquarium => @aquarium)
+    render json: @readings
   end
 
   def create
