@@ -138,7 +138,7 @@ GEM
       bundler (~> 1.0)
       guard (~> 2.2)
       guard-compat (~> 1.1)
-    guard-compat (1.1.0)
+    guard-compat (1.2.0)
     guard-rails (0.7.0)
       guard (~> 2.0)
     guard-rspec (4.5.0)
@@ -467,7 +467,6 @@ DEPENDENCIES
   simple_form
   slim-rails
   spring
-  sqlite3
   turbolinks
   uglifier
   unicorn
