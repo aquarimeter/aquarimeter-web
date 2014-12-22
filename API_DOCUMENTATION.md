@@ -71,7 +71,6 @@ DELETE "/api/v1/logout?authentication_token=<token>&email=<user email>
 
 
 
-
 #Adding your Aquarium to Aquarimeter Web#
 
 ````
@@ -105,10 +104,38 @@ If your token is missing, or invalid then you will see the following:
 **Replace all values as indicicated, exclude <>**.
 
 ```
-PATCH /api/v1/aquariums/<insert the name of your aquarium>?auth_token=<insert token here>
+PATCH /api/v1/aquariums/<insert the name of your aquarium>
 ```
 
 ````json
 {"auth_token":"HR6747C1iUM4XSRqKSsp","aquarium": {"name":"foobar"}}
 ````
+
+# Uploading sensor Readings to Aquarimeter Web
+
+```
+POST /api/v1/aquariums/aaaa/readings
+```
+
+```json
+{"auth_token":"HR6747C1iUM4XSRqKSsp","reading": {"ph":"6.3","temperature":"73.3"}}
+```
+
+Upon success it will return a JSON representation of the SensorReading associated or an error message:
+
+```json
+{"sensor_reading":{"id":130032,"created_at":"2014-12-22T02:19:37.164Z","aquarium_id":3,"temperature":"73.3","ph":"6.3"}}
+````
+
+HTTP Status of 201 (created) means that it was successful.
+
+If an invalid taken is either not included, or not valid:
+
+
+````json
+ {"error":"Token is invalid."}
+````
+
+HTTP status code of 422 (unprocessable entity) means failure.
+
 
