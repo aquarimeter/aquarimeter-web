@@ -57,9 +57,6 @@ group :development do
   gem 'rb-fchange', :require => false
   gem 'rb-fsevent', :require => false
   gem 'rb-inotify', :require => false
-
-  gem 'rails_apps_pages', github: 'RailsApps/rails_apps_pages'
-
 end
 group :development, :test do
   gem 'factory_girl_rails'
