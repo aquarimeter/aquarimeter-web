@@ -1,15 +1,31 @@
-.authform
-  = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f|
-    h3
-      | Sign up
-    = devise_error_messages!
-    .form-group
-      = f.label :email
-      = f.email_field :email, :autofocus => true, class: 'form-control'
-    .form-group
-      = f.label :password
-      = f.password_field :password, class: 'form-control'
-    .form-group
-      = f.label :password_confirmation
-      = f.password_field :password_confirmation, class: 'form-control'
-    = f.submit 'Sign up', :class => 'button right'
+#header-mid
+  #title-mid
+    | User Registration
+  .clear
+
+  #content
+    #box[style="padding-top: 50px;"]
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = f.error_notification
+        .form-inputs
+          = f.input :email, required: true, autofocus: true
+          br
+          = f.input :first_name, required: true
+          br
+          = f.input :last_name, required: true
+          br
+          = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable)
+          br
+          = f.input :password_confirmation, required: true
+        .form-actions
+          br
+          = f.button :submit, "Sign up", :class => "button2"
+          br
+        == render "devise/shared/links"
+    #footer-copyright
+      | Aquarimeter
+      br
+      |  Copyright &copy; 2014
+      .clear
+
+      .clear
