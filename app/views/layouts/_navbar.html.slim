@@ -5,8 +5,7 @@
     | Aquarimeter Web
   #navbar
     #home
-      a[href="#"]
-        | Home
+      = link_to "Home", root_path
     #login
       - if not user_signed_in?
         = link_to "Login", new_session_path(resource_name)
@@ -17,5 +16,5 @@
         | History
     #help
       a[href="#"]
-        | Help
+        | About
   .clear
