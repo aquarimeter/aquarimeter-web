@@ -6,15 +6,16 @@ class Api::V1::AquariumsController < Api::V1::BaseController
     @aquarium = Aquarium.new(aquarium_params)
     @aquarium.user = @current_user
     if @aquarium.save
-      render json: @aquarium, status: :created
+      respond_with @aquarium, :status => :created
     else
       render json: @aquarium.errors, status: :unprocessable_entity
     end
   end
 
   def update
+    @aquarium = Aquarium.find_by(:name => params[:aquarium][:name])
     if @aquarium.update_attributes(aquarium_params)
-      render json: @aquarium, status: 201, location: [:api, @aquarium]
+      render json: @aquarium, status: :created
     else
       render json: @aquarium.errors, status: :unprocessable_entity
     end
@@ -30,7 +31,7 @@ class Api::V1::AquariumsController < Api::V1::BaseController
   end
 
   def show
-    @aquarium = Aquarium.find_by :name => params[:name]
+    @aquarium = Aquarium.find_by(:name => params[:name])
     if @aquarium
       render json: @aquarium, status: :ok
     else
@@ -45,6 +46,6 @@ class Api::V1::AquariumsController < Api::V1::BaseController
 
   protected
   def aquarium_params
-    params.require(:aquarium).permit(:name, :ideal_temp_low, :ideal_temp_high)
+    params.require(:aquarium).permit(:name, :ideal_temperature, :ideal_temp_low, :ideal_temp_high)
   end
 end

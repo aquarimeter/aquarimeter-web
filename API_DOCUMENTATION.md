@@ -73,18 +73,20 @@ DELETE "/api/v1/logout?authentication_token=<token>&email=<user email>
 
 #Adding your Aquarium to Aquarimeter Web#
 
+**Note: If you are allowing Celsius and Fahrenheit, you must do conversions client-side!**
+
 ````
 POST /api/v1/aquariums
 ````
 
 ````json
-{"auth_token":"<auth token from login>","aquarium": {"name":"foobar","ideal_temp_low":"69", "ideal_temp_high":"90"}}
+{"auth_token":"<auth token from login>","aquarium": {"name":"foobar","ideal_temperature":"71","ideal_temp_low":"69", "ideal_temp_high":"90"}}
 ````
 
 Successful creation should yield the following:
 
 ```json
-{"aquarium":{"id":8,"name":"foobar","ideal_temp_low":"69.0","ideal_temp_high":"90.0","sensor_readings":[]}}
+{"aquarium":{"id":8,"name":"foobar","ideal_temperature":"71", "ideal_temp_low":"69.0","ideal_temp_high":"90.0","sensor_readings":[]}}
 ```
 
 If your token is missing, or invalid then you will see the following:

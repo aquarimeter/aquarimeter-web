@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141215073900) do
+ActiveRecord::Schema.define(version: 20141222154644) do
 
   create_table "aquariums", force: true do |t|
-    t.integer  "user_id",                                 null: false
-    t.string   "name",                                    null: false
-    t.decimal  "ideal_temp_low",  precision: 5, scale: 2, null: false
-    t.decimal  "ideal_temp_high", precision: 5, scale: 2, null: false
+    t.integer  "user_id",                                   null: false
+    t.string   "name",                                      null: false
+    t.decimal  "ideal_temp_low",    precision: 5, scale: 2, null: false
+    t.decimal  "ideal_temp_high",   precision: 5, scale: 2, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "ideal_temperature", precision: 5, scale: 2
   end
 
   add_index "aquariums", ["name"], name: "index_aquariums_on_name", using: :btree

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
   end
   devise_for :user
-  resources :aquariums, only: [:show, :update, :destroy],param: :name
+  resources :aquariums,param: :name
 
   mount MailPreview => 'mail_view' if Rails.env.development?
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
