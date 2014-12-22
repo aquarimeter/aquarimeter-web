@@ -15,8 +15,12 @@ Rails.application.routes.draw do
       end
     end
   end
+  get "about" => "static#about"
   devise_for :user
-  resources :aquariums,param: :name
+  authenticate :user do
+    resources :aquariums, param: :name, only: [:update]
+  end
+  resources :aquariums, param: :name
 
   mount MailPreview => 'mail_view' if Rails.env.development?
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
