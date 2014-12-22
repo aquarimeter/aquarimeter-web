@@ -7,28 +7,20 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
   def create
     build_resource(sign_up_params)
     if resource.save
-      status = :ok
-      message = "Successfully created new account for email #{sign_up_params[:email]}."
-      render json: {message: message, auth_token: @user.authentication_token}, status => :created
+      respond_with resource, status: :created
     else
       clean_up_passwords resource
       status = :internal_server_error
-      message = "Failed to create new account for email #{sign_up_params[:email]}."
-      render json: {errors: @user.errors, message: message}, status => :unprocessable_entity
+      message = "Failed to create new account, please correct any errors."
+      render :status => :unprocessable_entity, json: {errors: @user.errors, message: message}
     end
   end
 
   def destroy
     resource.destroy
     Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
-
-    respond_to do |format|
-      format.json {
-        render json: {
-                 message: 'Successfully deleted the account.'
-             }, status: :ok
-      }
-    end
+    render json: {message: 'Successfully deleted the account.'
+              }, status: :ok
   end
 
   private

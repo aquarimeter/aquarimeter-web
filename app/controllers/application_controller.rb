@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   include ActionController::ImplicitRender
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter :set_user
 
   protected
 
@@ -19,5 +20,4 @@ class ApplicationController < ActionController::Base
   def set_user
     @user = current_user
   end
-
 end

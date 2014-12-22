@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
     self.role ||= :user
   end
 
+  def full_name
+    "#{first_name last_name}"
+  end
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :token_authenticatable, :confirmable, :lockable, :database_authenticatable, :registerable,

@@ -3,10 +3,11 @@ FactoryGirl.define do
     confirmed_at Time.now
     first_name Faker::Name.first_name
     last_name Faker::Name.last_name
-    sequence(:email) { |n| Faker::Internet.free_email("User#{n}") }
+    sequence(:email) { |n| Faker::Internet.email("User#{n}") }
     password "please1234"
     trait :admin do
       role 'admin'
+      ensure_authentication_token!
     end
   end
 

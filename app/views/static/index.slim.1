@@ -1,0 +1,109 @@
+
+    #header
+      #logo
+        = image_tag "logo.jpg", width:"108", height:"97", alt: "Aquarimeter"
+      #title.titletext
+        | Aquarimeter Web
+      #nav
+        #home
+          a[href="#"]
+            | Home
+        #login
+          - if not @current_user
+            | Login
+          - else
+            = @current_user
+        #history
+          a[href="#"]
+            | History
+        #help
+          a[href="#"]
+            | Help
+      .clear
+
+      #header-mid
+        #title-mid
+          = Aquarium.first.name
+        #time-right
+          = Time.now.strftime("%e %b %Y %H:%M:%S %p %Z")
+      .clear
+
+      #content
+        #menu
+          #monitoring-text
+            | Monitoring
+          #general-text
+            a[href="general.html"]
+              | General
+          #snapshots-text
+            a[href="snapshots.html"]
+              | Snapshots
+          #control-text
+            | Control
+          #temp-text
+            a[href="temp.html"]
+              | Temperature
+          #footer-copyright
+            | Aquarimeter
+            br
+            |  Copyright © 2014
+        #mid-content
+          #general
+            #header-general
+              | General
+            .clear
+            #content-general-left
+              strong
+                | Temperature:
+              br
+              br
+              strong
+                | Avg 1 Hour:
+              br
+              br
+              strong
+                | Avg 6 Hours:
+              br
+              br
+              strong
+                | Avg 12 Hours:
+              br
+              br
+              strong
+                | Avg 24 Hours:
+            #content-general-right
+              strong
+                | pH Level:
+              br
+              br
+              strong
+                | Avg 1 Hour:
+              br
+              br
+              strong
+                | Avg 6 Hours:
+              br
+              br
+              strong
+                | Avg 12 Hours:
+              br
+              br
+              strong
+                | Avg 24 Hours:
+          #graphs
+            #header-graphs
+              | Graphs
+            #content-graphs
+              |       
+              input#temp[name="Temperature" type="checkbox" value="temp" checked="checked"]
+              |  Temperature
+              input#ph[name="pH Level" type="checkbox" value="ph"]
+              | pH Level
+              br
+              .graph-container
+                .graph-placeholder
+          .clear
+
+          #snapshots
+            #header-snapshots
+              | Snapshots

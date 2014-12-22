@@ -1,18 +1,26 @@
 class AquariumsController < ApplicationController
   before_filter :set_aquarium
+  before_filter :authenticate_user!, :only => [:show, :index]
+
   respond_to :html
   def show
     respond_with do |format|
       format.html { @aquarium }
     end
-
   end
 
-  # update avatar
+
+  def index
+    @aquariums = Aquarium.where(:user_id => current_user.id)
+    respond_with do |format|
+      format.html { @aquariums }
+    end
+  end
+
   def update
+    @aquarium = Aquarium.find_by params[:name]
 
   end
-
 
     protected
 

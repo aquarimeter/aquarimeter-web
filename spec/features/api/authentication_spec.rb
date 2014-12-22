@@ -2,7 +2,7 @@ require 'airborne'
 require 'spec_helper'
 require 'rails_helper'
 
-describe 'API Authentication' do
+describe 'API Authentication'  do
   before {@user = FactoryGirl.create(:user)}
   email = Faker::Internet.email
   it 'should be successful if given valid data' do
@@ -37,8 +37,9 @@ describe 'API Authentication' do
     # {:success=>true, :auth_token=>"zLyjR7gr8Zwa3WQzztuz"}
     expect_status 200
     expect_json_sizes 2
-    expect_json_keys [:success,:auth_token]
-    expect json_body[:auth_token].length >0
+    expect_json_keys([:user])
+    puts json_body[:user][:authentication_token]
+    expect json_body[:user][:authentication_token].length >0
   end
 
   it "does not give an authentication token when a user fails to give proper credentials" do
@@ -46,7 +47,7 @@ describe 'API Authentication' do
     expect_status 401
     expect_json_sizes 2
     expect_json_keys [:success, :info]
-    expect_json :success => false, :info => "Login Failed."
+    expect_json :success => false, :info => "Login Failed"
     expect_json_types :success => :boolean, :info => :string
   end
 end

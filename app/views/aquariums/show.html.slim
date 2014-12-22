@@ -11,16 +11,15 @@
       #monitoring-text
         | Monitoring
       #general-text
-        a[href="general.html"]
+        a[href="#"]
           | General
       #snapshots-text
-        a[href="snapshots.html"]
+        a[href="#"]
           | Snapshots
       #control-text
         | Control
       #temp-text
-        a[href="temp.html"]
-          | Temperature
+        = link_to "Update Aquarium", edit_aquarium_path(@aquarium)
       #footer-copyright
         | Aquarimeter
         br
@@ -34,13 +33,18 @@
         #content-general-left
           strong
             | Temperature:
-          = @aquarium.sensor_readings.last.temperature
-          | &deg; F
-          br
+            - if @aquarium.sensor_readings.last
+                =@aquarium.sensor_readings.last.temperature
+            - else
+                |  ---
+
         #content-general-right
           strong
             | pH Level:
-          = @aquarium.sensor_readings.last.ph
+          - if @aquarium.sensor_readings.last
+            =@aquarium.sensor_readings.last.temperature
+          - else
+            | ---
           br
       #graphs
         #header-graphs

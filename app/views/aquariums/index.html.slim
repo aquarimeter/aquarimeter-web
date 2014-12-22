@@ -1,0 +1,14 @@
+#header-mid
+  #title-mid
+    | Aquariums Owned by me
+  .clear
+
+  #content
+    #box[style="padding-top: 50px;"]
+     - @aquariums.each do |aquarium|
+       = link_to aquarium.name, aquarium_path(aquarium.name)
+       br
+
+
+
+

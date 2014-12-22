@@ -40,7 +40,7 @@ class Api::V1::AquariumsController < Api::V1::BaseController
   end
 
   def index
-    @aquariums = Aquarium.all
+    @aquariums = Aquarium.all_aquariums_by_user
     render json: @aquariums, status: :ok
   end
 

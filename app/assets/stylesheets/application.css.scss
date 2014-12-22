@@ -113,7 +113,7 @@ img {
   color: #FFF;
 }
 
-#header #navbar #history {
+#header #navbar #register {
   margin: auto;
   float: left;
   padding-top: 30px;
@@ -126,7 +126,7 @@ img {
   color: #FFF;
 }
 
-#header #navbar #help {
+#header #navbar #about{
   margin: auto;
   float: left;
   padding-top: 30px;
@@ -239,7 +239,7 @@ img {
 
 #content #menu #general-text a {
   color: #FFF;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a {
@@ -266,7 +266,7 @@ a {
 
 #content #menu #snapshots-text a {
   color: #000;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 #content #menu #snapshots-text a:hover {
@@ -301,7 +301,7 @@ a {
 
 #content #menu #temp-text a {
   color: #000;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 #content #menu #temp-text a:hover {
@@ -362,7 +362,7 @@ a {
   margin-left: 15px;
   margin-top: 10px;
   font-family: 'Oswald', sans-serif;
-  font-size: 16px;
+  font-size: 24px;
 }
 
 #content #mid-content #general #content-general-right {
@@ -373,7 +373,7 @@ a {
   margin-right: 15px;
   margin-top: 10px;
   font-family: 'Oswald', sans-serif;
-  font-size: 16px
+  font-size: 24px;
 }
 
 #content #mid-content #graphs {
@@ -691,3 +691,4 @@ label {
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 @import "bootstrap/alerts";
+
