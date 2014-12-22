@@ -1,0 +1,61 @@
+
+  #header-mid
+    #title-mid
+      = @aquarium.name
+    #time-right
+      = Time.zone_default.now
+  .clear
+
+  #content
+    #menu
+      #monitoring-text
+        | Monitoring
+      #general-text
+        a[href="general.html"]
+          | General
+      #snapshots-text
+        a[href="snapshots.html"]
+          | Snapshots
+      #control-text
+        | Control
+      #temp-text
+        a[href="temp.html"]
+          | Temperature
+      #footer-copyright
+        | Aquarimeter
+        br
+        |  Copyright &copy; 2014
+    #mid-content
+      #general
+        #header-general
+          | General
+        .clear
+
+        #content-general-left
+          strong
+            | Temperature:
+          = @aquarium.sensor_readings.last.temperature
+          | &deg; F
+          br
+        #content-general-right
+          strong
+            | pH Level:
+          = @aquarium.sensor_readings.last.ph
+          br
+      #graphs
+        #header-graphs
+          | Graphs
+        #content-graphs
+          |       
+          input#temp[name="Temperature" type="checkbox" value="temp" checked="checked"]
+          |  Temperature
+          input#ph[name="pH Level" type="checkbox" value="ph"]
+          | pH Level
+          br
+          .graph-container
+            .graph-placeholder
+      .clear
+
+      #snapshots
+        #header-snapshots
+          | Snapshots
