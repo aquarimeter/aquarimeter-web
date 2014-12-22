@@ -1,5 +1,5 @@
 class Api::V1::ReadingsController < Api::V1::BaseController
-  before_filter :authenticate_user, :except => [:show, :index]
+  before_filter :authenticate_user, :except => [:show]
   before_filter :set_aquarium
 
   def show
