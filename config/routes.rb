@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       end
       resources :aquariums,param: :name,defaults: { format: 'json' } do
         resource :readings
-        resources :images
+        resource :images
       end
     end
   end
@@ -20,7 +20,11 @@ Rails.application.routes.draw do
   authenticate :user do
     resources :aquariums, param: :name, only: [:update]
   end
-  resources :aquariums, param: :name
+  resources :aquariums,param: :name,defaults: { format: 'json' } do
+    resource :images
+  end
+
+
 
   mount MailPreview => 'mail_view' if Rails.env.development?
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

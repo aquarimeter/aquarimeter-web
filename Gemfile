@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.5'
 gem 'rails', '4.1.8'
-# gem 'sqlite3'
+gem 'sqlite3'
 gem 'mysql2'
 gem 'pg'
 gem 'sass-rails' #, '~> 4.0.3'

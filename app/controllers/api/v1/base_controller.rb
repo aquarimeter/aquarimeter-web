@@ -2,6 +2,7 @@ class Api::V1::BaseController < ApplicationController
   respond_to :json
 
   private
+
   #filter to check auth token
   def authenticate_user
     if not params.has_key?(:auth_token)
@@ -20,6 +21,6 @@ class Api::V1::BaseController < ApplicationController
   end
   ## Keep it DRY :D
   def failure
-    render json: {error: 'Token is invalid.'},:status => :unauthorized
+    render json: {error: 'Token is invalid.', messages: params},:status => :unauthorized
   end
 end

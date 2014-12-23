@@ -38,7 +38,7 @@ GEM
     api-pagination (3.1.0)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.9)
-    better_errors (2.0.0)
+    better_errors (2.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
@@ -127,7 +127,7 @@ GEM
     goldiloader (0.0.8)
       activerecord (>= 3.2, < 4.3)
       activesupport (>= 3.2, < 4.3)
-    guard (2.10.4)
+    guard (2.10.5)
       formatador (>= 0.2.4)
       listen (~> 2.7)
       lumberjack (~> 1.0)
@@ -223,7 +223,7 @@ GEM
       pry
     pundit (0.3.0)
       activesupport (>= 3.0.0)
-    quiet_assets (1.0.3)
+    quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-pjax (0.8.0)
@@ -243,12 +243,12 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.8)
       sprockets-rails (~> 2.0)
-    rails_admin (0.6.4)
+    rails_admin (0.6.6)
       builder (~> 3.1)
       coffee-rails (~> 4.0)
-      font-awesome-rails (>= 3.0)
+      font-awesome-rails (>= 3.0, < 5)
       haml (~> 4.0)
-      jquery-rails (~> 3.0)
+      jquery-rails (>= 3.0, < 5)
       jquery-ui-rails (~> 5.0)
       kaminari (~> 0.14)
       nested_form (~> 0.3)
@@ -256,7 +256,7 @@ GEM
       rails (~> 4.0)
       remotipart (~> 1.0)
       safe_yaml (~> 1.0)
-      sass-rails (>= 4.0)
+      sass-rails (>= 4.0, < 6)
     railties (4.1.8)
       actionpack (= 4.1.8)
       activesupport (= 4.1.8)
@@ -346,7 +346,7 @@ GEM
     skinny (0.2.3)
       eventmachine (~> 1.0.0)
       thin (~> 1.5.0)
-    slim (3.0.0)
+    slim (3.0.1)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
     slim-rails (3.0.0)
@@ -373,7 +373,7 @@ GEM
       colorize (>= 0.7.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
-    temple (0.7.3)
+    temple (0.7.4)
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -474,6 +474,7 @@ DEPENDENCIES
   simple_form
   slim-rails
   spring
+  sqlite3
   turbolinks
   uglifier
   unicorn
