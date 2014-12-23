@@ -5,10 +5,26 @@
 
   #content
     #box[style="padding-top: 50px;"]
-     - @aquariums.each do |aquarium|
-       = link_to aquarium.name, aquarium_path(aquarium.name)
-       br
-
-
-
+      table
+        th
+          | Name
+        th
+          | Ideal Tempereature
+        th
+          | Min Temperature
+        th
+          | Max Temperature
+        th
+          | Status Page
+        - @aquariums.each do |a|
+          tr
+            td
+              = a.name
+            td
+              = a.ideal_temperature
+            td
+              = a.ideal_temp_low
+            td
+              = a.ideal_temp_high
+            td
 
