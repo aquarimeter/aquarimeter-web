@@ -21,7 +21,26 @@ class AquariumsController < ApplicationController
     @aquarium = Aquarium.find_by params[:name]
 
   end
+  def photo
+    tempfile = Tempfile.new("photoupload")
+    tempfile.binmode
+    tempfile << request.body.read
+    tempfile.rewind
 
+    photo_params = params.slice(:filename, :type, :head).merge(:tempfile => tempfile)
+    photo = ActionDispatch::Http::UploadedFile.new(photo_params)
+
+    @postcard = Postcard.find(params[:id])
+    @postcard.photo = photo
+
+    respond_to do |format|
+      if @postcard.save
+        format.json { head :ok }
+      else
+        format.json { render :json => @postcard.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
     protected
 
     def set_aquarium
