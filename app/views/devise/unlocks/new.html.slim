@@ -1,0 +1,16 @@
+#header-mid
+  #title-mid
+    | Resend unlock instructions
+  .clear
+  #content
+    #box[style="padding-top: 50px;"]
+      = simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+        = f.error_notification
+        = f.full_error :unlock_token
+        .form-inputs
+          = f.input :email, required: true, autofocus: true
+          br
+        .form-actions
+          = f.button :submit, "Resend unlock instructions", :class => "button2"
+    == render "devise/shared/links"
+  =render "layouts/footer"
