@@ -16,7 +16,7 @@
           br
           = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable)
           br
-          = f.input :password_confirmation, required: true
+          = f.input :password_confirmation, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable)
         .form-actions
           br
           = f.button :submit, "Sign up", :class => "button2"
