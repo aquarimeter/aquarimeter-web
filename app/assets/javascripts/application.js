@@ -17,3 +17,7 @@
 //= require_tree .
 //= require raphael
 //= require morris
+//= require jquery.dataTables
+//= require aquariums
+
+

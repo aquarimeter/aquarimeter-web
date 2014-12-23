@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+devise_for :user
 
   namespace :api do
     namespace :v1, :format => :json do
@@ -16,11 +17,9 @@ Rails.application.routes.draw do
     end
   end
   get "about" => "static#about"
-  devise_for :user
-  authenticate :user do
-    resources :aquariums, param: :name, only: [:update]
-  end
-  resources :aquariums,param: :name,defaults: { format: 'json' } do
+
+
+  resources :aquariums,param: :name do
     resource :images
   end
 

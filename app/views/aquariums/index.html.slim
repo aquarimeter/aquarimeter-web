@@ -4,27 +4,18 @@
   .clear
 
   #content
-    #box[style="padding-top: 50px;"]
-      table
-        th
-          | Name
-        th
-          | Ideal Tempereature
-        th
-          | Min Temperature
-        th
-          | Max Temperature
-        th
-          | Status Page
-        - @aquariums.each do |a|
+    #box
+      table#listing[class="display" cellspacing="0" width="95%"]
+        thead
           tr
-            td
-              = a.name
-            td
-              = a.ideal_temperature
-            td
-              = a.ideal_temp_low
-            td
-              = a.ideal_temp_high
-            td
-
+            th Name
+            th Ideal Temperature
+            th Minimum Temperature
+            th Maximum Temperature
+        tfoot
+          tr
+            th Name
+            th Ideal Temperature
+            th Minimum Temperature
+            th Maximum Temperature
+        tbody

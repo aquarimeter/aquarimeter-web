@@ -3,11 +3,11 @@
   .form-inputs
     = f.input :name, required:true, hint: "This is how we reference your aquarium and it must be unique!"
     br
-    = f.input :ideal_temperature, require: true, hint: "this is the ideal temperature"
+    = f.input :ideal_temperature, require: true, hint: "This is the ideal temperature"
     br
-    = f.input :ideal_temp_low, required: true, collection: 55..75, hint: "This is the lower ideal temperature before we heat."
+    = f.input :ideal_temp_low, required: true, collection: 55..75, hint: "This is the lowest temperature before we heat."
     br
-    = f.input :ideal_temp_high, collection: 55..90,  required: true, hint: "This is the lower ideal temperature before we cool."
+    = f.input :ideal_temp_high, collection: 55..90,  required: true, hint: "This is the highest temperature before we cool."
   .form-actions
     br
     br
