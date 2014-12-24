@@ -19,7 +19,7 @@ class AquariumsController < ApplicationController
 
 
   def index
-    @aquariums = Aquarium.where(:user_id => current_user.id)
+    @aquariums = Aquarium.where(:user => current_user)
     respond_with html: @aquariums
   end
 
