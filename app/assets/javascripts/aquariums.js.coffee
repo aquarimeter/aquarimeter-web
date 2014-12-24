@@ -6,7 +6,6 @@ jQuery ->
 
 jQuery ->
   Morris.Line
-  alert("JINGYYYYY");
   element: '#readings_chart'
   data: $("#reading_chart").data('readings')
   xkey: 'created_at'

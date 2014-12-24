@@ -2,7 +2,7 @@
 # adapted from http://railscasts.com/episodes/340-datatables
 # Most of this is straight-forward --
 class SensorReadingDatatable
-  delegate :params, :h, to: :@view
+  delegate :params, to: :@view
 
   def initialize(view)
     @view = view
@@ -23,8 +23,8 @@ class SensorReadingDatatable
     readings.map do |readings|
       [
           (readings.created_at.strftime('%b %e %Y %H:%M:%S')),
-          (readings.ph),
-          (readings.temperature)
+          (readings.ph.to_f),
+          (readings.temperature.to_f)
       ]
     end
   end

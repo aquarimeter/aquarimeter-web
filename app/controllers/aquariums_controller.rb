@@ -1,6 +1,6 @@
 class AquariumsController < ApplicationController
   before_filter :set_aquarium
-  before_filter :authenticate_user!, :only => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show]
   respond_to :html
 
   def show

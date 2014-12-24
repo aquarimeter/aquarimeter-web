@@ -38,6 +38,9 @@ gem 'uglifier' #, '>= 1.3.0'
 gem 'coffee-rails' #, '~> 4.0.0'
 gem 'jquery-rails'
 gem 'goldiloader'
+gem 'jquery-datatables-rails'
+gem 'ajax-datatables-rails'
+gem 'simple_form_fancy_uploads'
 
 group :development do
   gem 'better_errors'

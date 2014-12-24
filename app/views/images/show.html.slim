@@ -1,0 +1,62 @@
+#header-mid
+  #title-mid
+    = @aquarium.name
+  #time-right
+    = Time.zone_default.now
+  .clear
+
+  #content
+    #menu
+      #monitoring-text
+        | Monitoring
+      #general-text
+        a[href="#"]
+          | General
+      #snapshots-text
+        a[href="#"]
+          | Snapshots
+      #control-text
+        | Control
+      #temp-text
+        = link_to "Update Aquarium", edit_aquarium_path(@aquarium.name)
+      #footer-copyright
+        | Aquarimeter
+        br
+        |  Copyright &copy; 2014
+    #mid-content
+      #general
+        #header-general
+          | General
+        .clear
+
+        #content-general-left
+          strong
+            | Temperature:
+            - if @aquarium.sensor_readings.last
+              =@aquarium.sensor_readings.last.temperature
+            - else
+              |  ---
+
+        #content-general-right
+          strong
+            | pH Level:
+          - if @aquarium.sensor_readings.last
+            =@aquarium.sensor_readings.last.ph
+          - else
+            | ---
+          br
+      #graphs
+        #header-graphs
+          | Graphs
+          br
+          = content_tag :div, "", id: "readings_chart", data: {readings: @aquarium.sensor_readings}
+      .clear
+        #snapshots
+          #header-snapshots
+            | Snapshots          
+          #snapshots-preview
+            -for image in @images
+              #thumbnail
+                = image_tag(image.image_url(:thumb).to_s)
+            = will_paginate(@images)                    
+                
