@@ -1,6 +1,6 @@
 class AquariumsController < ApplicationController
   before_filter :set_aquarium
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :only => [:show, :index]
   respond_to :html
 
   def show
@@ -19,8 +19,9 @@ class AquariumsController < ApplicationController
 
 
   def index
-    @aquariums = Aquarium.where(:user => current_user)
+    @aquariums = Aquarium.where(:user_id => current_user.id)
     respond_with html: @aquariums
+
   end
 
   # update avatar

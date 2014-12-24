@@ -12,10 +12,12 @@
             th Ideal Temperature
             th Minimum Temperature
             th Maximum Temperature
-        tfoot
-          tr
-            th Name
-            th Ideal Temperature
-            th Minimum Temperature
-            th Maximum Temperature
+
         tbody
+          - @aquariums.each do |aquarium|
+                  tr
+                    td =link_to aquarium.name, aquarium_path(:name => aquarium.name)
+                    td =aquarium.ideal_temperature
+                    td =aquarium.ideal_temp_low
+                    td =aquarium.ideal_temp_high
+
