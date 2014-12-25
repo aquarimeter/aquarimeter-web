@@ -30,7 +30,13 @@ gem 'will_paginate'
 # gem 'emblem-rails'
 # gem 'ember-source', '~> 1.9.0'
 # gem 'ember_script-rails', :github => 'ghempton/ember-script-rails'
+gem 'morrisjs-rails'
+gem 'raphael-rails'
 gem 'sidekiq'
+gem 'mina'
+gem 'mina-sidekiq', :require => false
+gem 'mina-unicorn', :require => false
+gem 'open4'
 gem 'gaffe'
 gem 'sass'
 gem 'sass-rails' #, '~> 4.0.3'
