@@ -47,7 +47,7 @@ gem 'goldiloader'
 gem 'jquery-datatables-rails'
 gem 'ajax-datatables-rails'
 gem 'simple_form_fancy_uploads'
-
+gem 'mail_view'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms => [:mri_21]
@@ -58,8 +58,7 @@ group :development do
   gem 'capistrano-rvm' #, '~> 0.1.1'
   gem 'guard-bundler'
   gem 'guard-rails'
-  gem 'guard-rspec'
-  gem 'mail_view'
+  gem 'guard-rspec'  
   gem 'mailcatcher'
   gem 'quiet_assets'
   gem 'rb-fchange', :require => false
