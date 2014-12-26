@@ -6,7 +6,6 @@ shared_dir = File.expand_path('../../../shared/', __FILE__)
 worker_processes 4
 preload_app true
 timeout 30
-user "rails"
 
 # Fill path to your app
 working_directory app_dir
