@@ -4,8 +4,7 @@ class CreateInitialDataModel < ActiveRecord::Migration
       t.integer :user_id, :null => false
       t.string :name, :unique =>  true, :null => false
       t.decimal :ideal_temp_low, :null => false, precision: 5, scale: 2
-      t.decimal :ideal_temp_high, :null => false, precision: 5, scale: 2
-      t.has_many :images
+      t.decimal :ideal_temp_high, :null => false, precision: 5, scale: 2      
       t.timestamps
     end
 
