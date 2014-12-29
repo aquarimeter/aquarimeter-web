@@ -17,16 +17,10 @@ class CreateInitialDataModel < ActiveRecord::Migration
 
     create_table :images do |t|
       t.string :image, :null => false
-      t.string :image, :null => false
       t.boolean :avatar, :null => false, :default => false
       t.belongs_to :aquarium, :null => false
       t.timestamps
     end
-
-
-    add_index :images, :aquarium_id
-    add_index :aquariums, :name
-    add_index :aquariums, :user_id
 
     add_index :sensor_readings, :aquarium_id
 

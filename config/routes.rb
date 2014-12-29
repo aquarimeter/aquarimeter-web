@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       end
       resources :aquariums,param: :name,defaults: { format: 'json' } do
         resource :readings
-        resource :images
+        resource :images, controller: "api/v1/images"
       end
     end
   end
@@ -19,9 +19,11 @@ Rails.application.routes.draw do
 
 
   resources :aquariums,param: :name do
-    resource :images
+    resource :images, controller: "images"
   end
+  require 'sidekiq/web'
 
+  mount Sidekiq::Web => '/sidekiq'
 
   devise_for :user
   mount MailPreview => 'mail_view' if Rails.env.development?

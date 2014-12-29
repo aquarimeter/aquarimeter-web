@@ -54,17 +54,12 @@
         #snapshots
           #header-snapshots
             | Snapshots
-          -if not @images
-            h2 No Images :'(
-          - else
-            -for image in @images
-              #timestamp
-              = image.created_at.strftime('%b %e %Y %H:%M:%S')
-                #thumbnail
-                  = image_tag(image.image_url(:thumb).to_s) if !image.image_processing
-                  = "Image processing..." if image.image_processing
-                  #sharesocial
-                    img[src="images/twtr.jpg" width="96" height="23"]
-                    img[src="images/fbk.jpg" width="96" height="23"]
+          #snapshots-preview
+            -if @images
+              -for image in @images
+                #box
+                #timestamp
+                = image.created_at.strftime('%b %e %Y %H:%M:%S')
+              #thumbnail = image_tag(image.image_url(:thumb).to_s)
+                #addthis_custom_sharing
               = will_paginate(@images)
-                

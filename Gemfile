@@ -9,7 +9,6 @@ gem 'jbuilder' #, '~> 2.0'
 gem 'sdoc', group: :doc
 gem 'spring', group: :development
 gem 'carrierwave'
-gem 'carrierwave_backgrounder'
 gem "mini_magick"
 gem "letter_opener"
 gem 'bootstrap-sass'
@@ -35,6 +34,7 @@ gem 'schema_to_scaffold'
 gem 'morrisjs-rails'
 gem 'raphael-rails'
 gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', :require => nil
 gem 'mina'
 gem 'mina-sidekiq', :require => false
 gem 'mina-unicorn', :require => false

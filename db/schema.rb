@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141222154644) do
+ActiveRecord::Schema.define(version: 20141229093616) do
 
   create_table "aquariums", force: true do |t|
     t.integer  "user_id",                                   null: false
@@ -22,9 +22,6 @@ ActiveRecord::Schema.define(version: 20141222154644) do
     t.datetime "updated_at"
     t.decimal  "ideal_temperature", precision: 5, scale: 2
   end
-
-  add_index "aquariums", ["name"], name: "index_aquariums_on_name", using: :btree
-  add_index "aquariums", ["user_id"], name: "index_aquariums_on_user_id", using: :btree
 
   create_table "errors", force: true do |t|
     t.string   "usable_type"
@@ -41,17 +38,13 @@ ActiveRecord::Schema.define(version: 20141222154644) do
   end
 
   create_table "images", force: true do |t|
-    t.string   "image",                             null: false
-    t.string   "description",                       null: false
-    t.string   "processed_image",                   null: false
-    t.string   "unprocessed_image",                 null: false
-    t.boolean  "avatar",            default: false, null: false
-    t.integer  "aquarium_id",                       null: false
+    t.string   "image",                            null: false
+    t.boolean  "avatar",           default: false, null: false
+    t.integer  "aquarium_id",                      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "image_processing", default: false, null: false
   end
-
-  add_index "images", ["aquarium_id"], name: "index_images_on_aquarium_id", using: :btree
 
   create_table "sensor_readings", force: true do |t|
     t.integer  "aquarium_id",                         null: false
@@ -85,7 +78,6 @@ ActiveRecord::Schema.define(version: 20141222154644) do
     t.string   "last_name",                          null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "tokens"
     t.integer  "role"
     t.string   "authentication_token"
   end
