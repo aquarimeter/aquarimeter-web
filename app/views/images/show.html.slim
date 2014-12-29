@@ -58,8 +58,8 @@
             -if @images
               -for image in @images
                 #box
-                #timestamp
-                = image.created_at.strftime('%b %e %Y %H:%M:%S')
-              #thumbnail = image_tag(image.image_url(:thumb).to_s)
-                #addthis_custom_sharing
+                  = image.created_at.strftime('%b %e %Y %H:%M:%S')
+                  #timestamp
+                  = image_tag(image.image_url(:thumb).to_s)
+                #thumbnail
               = will_paginate(@images)
