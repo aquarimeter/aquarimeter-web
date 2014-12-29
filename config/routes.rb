@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-devise_for :user
-
   namespace :api do
     namespace :v1, :format => :json do
+      devise_for :user, {registration: "api/registration", sessions: "api/sessions"}
       devise_scope :user do
         post 'login' => 'sessions#create', :as => :login, defaults: { format: 'json' }
         delete 'logout' => 'sessions#destroy', :as => :logout, defaults: { format: 'json' }
@@ -24,7 +23,7 @@ devise_for :user
   end
 
 
-
+  devise_for :user
   mount MailPreview => 'mail_view' if Rails.env.development?
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'aquariums#index'
