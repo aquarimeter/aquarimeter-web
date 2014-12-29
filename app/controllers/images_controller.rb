@@ -17,7 +17,7 @@ class ImagesController < ApplicationController
   # GET /images/1
   # GET /images/1.json
   def show
-    @images = Image.where(:aquarium => @aquarium).paginate(:page => 1, :per_page=> 8)
+    @images = Image.where(:aquarium => @aquarium).paginate(:page => 1, :per_page=> 4)
     respond_to do |format|
       format.html # show.html.slim
     end

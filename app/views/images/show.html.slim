@@ -62,4 +62,5 @@
                   #timestamp
                   = image_tag(image.image_url(:thumb).to_s)
                 #thumbnail
-              = will_paginate(@images)
+                  #sharesocial
+              = will_paginate(@images,renderer: BootstrapPagination::Rails)

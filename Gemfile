@@ -49,7 +49,7 @@ gem 'goldiloader'
 gem 'jquery-datatables-rails'
 gem 'ajax-datatables-rails'
 gem 'simple_form_fancy_uploads'
-gem 'mail_view'
+gem 'will_paginate-bootstrap'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms => [:mri_21]
@@ -63,6 +63,7 @@ group :development do
   gem 'guard-rspec'  
   gem 'mailcatcher'
   gem 'quiet_assets'
+  gem 'mail_view'
   gem 'rb-fchange', :require => false
   gem 'rb-fsevent', :require => false
   gem 'rb-inotify', :require => false
