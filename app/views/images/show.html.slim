@@ -10,8 +10,7 @@
       #monitoring-text
         | Monitoring
       #general-text
-        a[href="#"]
-          | General
+        = link_to "General", aquarium_path(@aquarium.name)
       #snapshots-text
         a[href="#"]
           | Snapshots
@@ -54,13 +53,15 @@
         #snapshots
           #header-snapshots
             | Snapshots
+          = paginate(@images, :theme => 'twitter-bootstrap',
+                                     :pagination_class => "pagination-small pagination-centered",  :remote => true)
           #snapshots-preview
             -if @images
               -for image in @images
                 #box
                   = image.created_at.strftime('%b %e %Y %H:%M:%S')
-                  #timestamp
                   = image_tag(image.image_url(:thumb).to_s)
-                #thumbnail
-                  #sharesocial
-              = will_paginate(@images,renderer: BootstrapPagination::Rails)
+                  = render_shareable :buttons=> ['twitter', 'facebook', 'tumblr']
+
+
+

@@ -1,0 +1,23 @@
+#content
+  #menu
+    #monitoring-text
+      | Monitoring
+    #general-text
+      a[href="#"]
+        | General
+    #snapshots-text
+      a[href="#"]
+        | Snapshots
+    #control-text
+      | Control
+    #temp-text
+      = link_to "Update Aquarium", edit_aquarium_path(@aquarium.name)
+    #footer-copyright
+      | Aquarimeter
+      br
+      |  Copyright &copy; 2014
+  #mid-content
+    #general
+      #header-general
+        | General
+      .clear

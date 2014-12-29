@@ -10,11 +10,9 @@
       #monitoring-text
         | Monitoring
       #general-text
-        a[href="#"]
-          | General
+          = link_to "General", aquarium_path(@aquarium.name)
       #snapshots-text
-        a[href="#"]
-          | Snapshots
+        = link_to "Snapshots", aquarium_images_path(@aquarium.name)
       #control-text
         | Control
       #temp-text
@@ -55,17 +53,17 @@
         #header-snapshots
           | Latest pH and temperature readings
           table#readings[class="display" cellspacing="0" width="95%"]
-              thead
-                tr
-                  th Time
-                  th pH
-                  th Temperature (F)
-              tfoot
-                tr
-                  th Time
-                  th pH
-                  th Temperature (F)
-              tbody
+            thead
+              tr
+                th Time
+                th pH
+                th Temperature (F)
+            tfoot
+              tr
+                th Time
+                th pH
+                th Temperature (F)
+            tbody
 
 
 
