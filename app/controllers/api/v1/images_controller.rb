@@ -1,5 +1,5 @@
 class Api::V1::ImagesController < Api::V1::BaseController
-  before_filter :authenticate_user, :except => [:index,:show]
+  before_filter :authenticate_user, :except => [:index, :show]
   before_filter :set_aquarium
 
 
@@ -24,7 +24,7 @@ class Api::V1::ImagesController < Api::V1::BaseController
       uploaded_file = ActionDispatch::Http::UploadedFile.new(:tempfile => tempfile, :filename => picture_path_params["filename"], :original_filename => picture_path_params["original_filename"])
 
       #replace picture_path with the new uploaded file
-      params[:image][:image_path] =  uploaded_file
+      params[:image][:image_path] = uploaded_file
 
     end
 
@@ -62,16 +62,25 @@ class Api::V1::ImagesController < Api::V1::BaseController
         end
       end
     end
+  end
 
-    def destroy
-      @image = Image.find(params[:id])
-      @image.destroy
-      flash[:notice] = "Successfully destroyed image."
-      redirect_to @image.gallery
+  def destroy
+    @image = Image.find(params[:id])
+    @image.destroy
+    flash[:notice] = "Successfully destroyed image."
+    redirect_to @image.gallery
+  end
+
+  def show
+    respond_to do |format|
+      format.html # show.html.slim
+      format.json { render json: @image }
     end
   end
   private
   def set_aquarium
     @aquarium = Aquarium.find_by :name => params[:aquarium_name]
   end
+
+
 end

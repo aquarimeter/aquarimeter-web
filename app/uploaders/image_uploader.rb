@@ -5,7 +5,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
-  include ::CarrierWave::Backgrounder::Delay
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -20,16 +19,8 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg png gif tiff)
   end
   
-  version :thumb_small do
-    process :resize_to_fill => [50,50]
-    process :strip
-  end
-  version :thumb_medium do
-    process :resize_to_limit => [100,100]
-    process :strip
-  end
-  version :thumb_large do
-    process :resize_to_limit => [300,300]
+  version :thumb do
+    process :resize_to_fill => [300,300]
     process :strip
   end
   version :scaled_full do
