@@ -3,7 +3,8 @@ class ImagesController < ApplicationController
   before_filter :set_aquarium
   before_action :set_image, only: [:edit, :update, :destroy]
   before_action :set_images, only: [:show]
-  # GET /images
+
+    # GET /images
   # GET /images.json
   def index
     @images = Image.all
@@ -17,7 +18,7 @@ class ImagesController < ApplicationController
   # GET /images/1
   # GET /images/1.json
   def show
-    @images = Image.where(:aquarium => @aquarium).paginate(:page => 1, :per_page=> 4)
+    @images = Image.where(:aquarium => @aquarium).page(params[:page]).per(4)
     respond_to do |format|
       format.html # show.html.slim
     end
@@ -92,5 +93,9 @@ class ImagesController < ApplicationController
   private
   def set_aquarium
     @aquarium = Aquarium.find_by :name => params[:aquarium_name]
+    if not @aquarium
+      flash[:error] = "This will not work without an aquarium!"
+      redirect_to root_url
+    end
   end
 end
