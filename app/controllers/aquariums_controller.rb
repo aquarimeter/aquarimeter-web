@@ -17,6 +17,12 @@ class AquariumsController < ApplicationController
     end
   end
 
+  def update
+    if @aquarium.update_attributes(aquarium_params)
+      flash[:notice] = "Successfully updated aquarium #{aquarium.name}"
+      respond_wtih html: @aquarium
+    end
+  end
 
   def index
     @aquariums = Aquarium.where(:user_id => current_user.id)
