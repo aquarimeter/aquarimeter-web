@@ -1,7 +1,7 @@
 require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
-require 'mina/rbenv'
+require 'mina/rvm'
 require 'mina_sidekiq/tasks'
 require 'mina/unicorn'
 
@@ -31,7 +31,7 @@ task :environment do
 echo "-----> Loading environment"
 #{echo_cmd %[source ~/.bashrc]}
 }
-  invoke :'rbenv:load'
+  invoke :'rvm:use[ruby-2.1.5@aquarimeter_web]'
 end
 
 # Put any custom mkdir's in here for when `mina setup` is ran.

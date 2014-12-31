@@ -8,9 +8,7 @@ Sudish worked on Aquarimeter and worked on the interface between Aquarimeter and
 Mark and Robert did Aqarimeter Web
 
 Copy config/application.example.yml to config/application.yml and edit it. 
-
-The token auth is thanks to https://github.com/bdwain/simple_authentication_token_sample_app
-
+Copy
 I fixed it slightly and have modified large parts of it. The idea is that the user will not need to manage much.
 
 

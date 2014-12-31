@@ -413,7 +413,7 @@ a {
   margin-top: 30px;
 }
 
-#content #mid-content #snapshots #header-snapshots {
+#content #mid-content #snapshots  #header-snapshots {
   margin: auto;
   width: 941px;
   height: 30px;
@@ -637,8 +637,8 @@ li {
 
 
 input {
-  background-image: url(form_bg.jpg);
-  background-repeat: repeat-x;
+//  background-image: url(form_bg.jpg);
+//  background-repeat: repeat-x;
   border: 1px solid #d1c7ac;
   outline: 0;
   -moz-border-radius: 10px; /* Firefox */
@@ -690,7 +690,6 @@ label {
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 @import "bootstrap/alerts";
-
 
 tbody {
   color: #fff;
