@@ -5,7 +5,6 @@ gem "rack-protection"
 
 gem 'sqlite3'
 gem 'mysql2' # Mariadb for db
-gem 'pg'
 gem 'turbolinks'
 gem 'jbuilder' #, '~> 2.0'
 gem 'sdoc', group: :doc
