@@ -51,70 +51,13 @@
           br
           = content_tag :div, "", id: "readings_chart", data: {readings: @aquarium.sensor_readings}
       .clear
-        #snapshots
-          #header-snapshots
-            | Snapshots
-          #snapshots-preview
-            #box
-              #timestamp
-                | 01/24/14 04:14:24 PM
-              #thumbnail
-              #sharesocial
-                center
-                  img[src="images/twtr.jpg" width="96" height="23"]
-                  img[src="images/fbk.jpg" width="96" height="23"]
-            #box
-              #timestamp
-                | 01/24/14 04:14:24 PM
-              #thumbnail
-              #sharesocial
-                center
-                  img[src="images/twtr.jpg" width="96" height="23"]
-                  img[src="images/fbk.jpg" width="96" height="23"]
-            #box
-              #timestamp
-                | 01/24/14 04:14:24 PM
-              #thumbnail
-              #sharesocial
-                center
-                  img[src="images/twtr.jpg" width="96" height="23"]
-                  img[src="images/fbk.jpg" width="96" height="23"]
-            #box
-              #timestamp
-                | 01/24/14 04:14:24 PM
-              #thumbnail
-              #sharesocial
-                center
-                  img[src="images/twtr.jpg" width="96" height="23"]
-                  img[src="images/fbk.jpg" width="96" height="23"]
-            #box
-              #timestamp
-                | 01/24/14 04:14:24 PM
-              #thumbnail
-              #sharesocial
-                center
-                  img[src="images/twtr.jpg" width="96" height="23"]
-                  img[src="images/fbk.jpg" width="96" height="23"]
-            #box
-              #timestamp
-                | 01/24/14 04:14:24 PM
-              #thumbnail
-              #sharesocial
-                center
-                  img[src="images/twtr.jpg" width="96" height="23"]
-                  img[src="images/fbk.jpg" width="96" height="23"]
-            #box
-              #timestamp
-                | 01/24/14 04:14:24 PM
-              #thumbnail
-
-            #box
-              #timestamp
-                | 01/24/14 04:14:24 PM
-              #thumbnail
-              #sharesocial
-                center
-                  img[src="images/wtr.jpg" width="96" height="23"]
-                  img[src="images/fbk.jpg" width="96" height="23"]
-          #pagination
-            | prev 1 2 3 next
+      #snapshots
+        #header-snapshots
+          | Snapshots            
+        #snapshots-preview
+          -if @images
+            -for image in @images
+              #box
+                = image.created_at.strftime('%b %e %Y %H:%M:%S')
+                = image_tag(image.image_url(:thumb).to_s)
+                = facebook_button

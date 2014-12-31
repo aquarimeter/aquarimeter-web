@@ -1,13 +1,13 @@
-= simple_form_for(@aquarium, :param => :name) do |f|
+= simple_form_for(@aquarium) do |f|
   = f.error_notification
   .form-inputs
     = f.input :name, required:true, hint: "This is how we reference your aquarium and it must be unique!"
     br
     = f.input :ideal_temperature, require: true, hint: "This is the ideal temperature"
     br
-    = f.input :ideal_temp_low, required: true, hint: "This is the lowest temperature before we heat."
+    = f.input :ideal_temp_low, required: true, collection: 55..75, hint: "This is the lowest temperature before we heat."
     br
-    = f.input :ideal_temp_high, required: true, hint: "This is the highest temperature before we cool."
+    = f.input :ideal_temp_high, collection: 55..90,  required: true, hint: "This is the highest temperature before we cool."
   .form-actions
     br
     br

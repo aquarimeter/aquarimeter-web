@@ -1,0 +1,10 @@
+= simple_form_for @image, :url => :aquarium_images, :html => {:multipart => true} do |f|
+  = f.error_notification
+  = f.hidden_field :aquarium_id
+  .form-inputs
+    = f.label :image
+    = f.file_field :image
+  .form-actions
+    br
+    br
+    = f.button :submit, "Save Image"
