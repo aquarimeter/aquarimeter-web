@@ -31,8 +31,6 @@ POST /api/v1/login
 ```
 ## Returns as JSON
 - auth_token **<-- SAVE THIS**
-- All aquariums which were registered by the user and all associated sensor readings 
-
 
 ##HTTP Status Codes
 
