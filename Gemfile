@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.1.5'
 gem 'rails', '4.1.8'
+gem "rack-protection"
+
 gem 'sqlite3'
 gem 'mysql2' # Mariadb for db
 gem 'pg'
@@ -25,12 +27,7 @@ gem 'unicorn-rails'
 gem 'upmin-admin'
 gem 'active_model_serializers'
 gem 'devise-token_authenticatable'
-gem 'will_paginate'
 gem 'schema_to_scaffold'
-# gem 'ember-rails'
-# gem 'emblem-rails'
-# gem 'ember-source', '~> 1.9.0'
-# gem 'ember_script-rails', :github => 'ghempton/ember-script-rails'
 gem 'morrisjs-rails'
 gem 'raphael-rails'
 gem 'sidekiq'
@@ -49,7 +46,11 @@ gem 'goldiloader'
 gem 'jquery-datatables-rails'
 gem 'ajax-datatables-rails'
 gem 'simple_form_fancy_uploads'
-gem 'will_paginate-bootstrap'
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
+gem 'mail_view'
+gem 'shareable'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms => [:mri_21]
@@ -63,7 +64,6 @@ group :development do
   gem 'guard-rspec'  
   gem 'mailcatcher'
   gem 'quiet_assets'
-  gem 'mail_view'
   gem 'rb-fchange', :require => false
   gem 'rb-fsevent', :require => false
   gem 'rb-inotify', :require => false

@@ -1,7 +1,7 @@
 require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
-require 'mina/rvm'
+require 'mina/rbenv'
 require 'mina_sidekiq/tasks'
 require 'mina/unicorn'
 
@@ -19,7 +19,6 @@ set :user, 'deployer'
 set :forward_agent, true
 set :port, '22'
 set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
-set :rvm_path, "/usr/local/rvm/scripts/rvm"
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
 set :shared_paths, ['config/database.yml', 'log', 'config/initializers/devise.rb','config/application.yml']
@@ -32,7 +31,7 @@ task :environment do
 echo "-----> Loading environment"
 #{echo_cmd %[source ~/.bashrc]}
 }
-  invoke :'rvm:use[ruby-2.1.5@aquarimeter_web]'  
+  invoke :'rbenv:load'
 end
 
 # Put any custom mkdir's in here for when `mina setup` is ran.
@@ -51,7 +50,7 @@ task :setup => :environment do
 
   queue! %[touch "#{deploy_to}/shared/config/secrets.yml"]
   queue %[echo "-----> Be sure to edit 'shared/config/secrets.yml'."]
-  
+
   queue! %[touch "#{deploy_to}/shared/config/application.yml"]
   queue %[echo "-----> Be sure to edit 'shared/config/application.yml'."]
 
