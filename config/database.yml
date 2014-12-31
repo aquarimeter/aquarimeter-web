@@ -30,4 +30,4 @@ test:
 
 production:
   <<: *mysql
-  database: aquarimeter_development
+  database: aquarimeter_production
