@@ -31,7 +31,7 @@ task :environment do
 echo "-----> Loading environment"
 #{echo_cmd %[source ~/.bashrc]}
 }
-  invoke :'rvm:use[ruby-2.1.5@aquarimeter_web]'
+  invoke :'rvm:use[ruby-2.2.0@aquarimeter_web]'
 end
 
 # Put any custom mkdir's in here for when `mina setup` is ran.

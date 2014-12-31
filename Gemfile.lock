@@ -215,7 +215,6 @@ GEM
       mini_portile (~> 0.6.0)
     open4 (1.3.4)
     orm_adapter (0.5.0)
-    pg (0.17.1)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
     pry (0.10.1)
@@ -472,7 +471,6 @@ DEPENDENCIES
   morrisjs-rails
   mysql2
   open4
-  pg
   pry-rails
   pry-rescue
   pundit
