@@ -31,3 +31,4 @@ test:
 production:
   <<: *mysql
   database: aquarimeter_production
+  password: <%= ENV['DB_PASS'] %>
