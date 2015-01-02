@@ -17,6 +17,8 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+#values used in "test" and "development"
 MANDRILL_USERNAME: Your_Username
 MANDRILL_APIKEY: Your_API_Key
 DOMAIN_NAME: example.com
@@ -26,3 +28,15 @@ ADMIN_EMAIL: user@example.com
 ADMIN_PASSWORD: changeme
 DB_USER: Changeme
 DB_PASS: Changeme
+
+#production values
+production:
+  MANDRILL_USERNAME: Your_Username
+  MANDRILL_APIKEY: Your_API_Key
+  DOMAIN_NAME: example.com
+  ADMIN_FIRST_NAME: Admin
+  ADMIN_LAST_NAME: User
+  ADMIN_EMAIL: user@example.com
+  ADMIN_PASSWORD: changeme
+  DB_USER: Changeme
+  DB_PASS: Changeme
