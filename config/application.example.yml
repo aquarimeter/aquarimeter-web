@@ -24,3 +24,5 @@ ADMIN_FIRST_NAME: Admin
 ADMIN_LAST_NAME: User
 ADMIN_EMAIL: user@example.com
 ADMIN_PASSWORD: changeme
+DB_USER=Changeme
+DB_PASS=Changeme
