@@ -334,7 +334,8 @@ a {
 #content #mid-content #general {
   margin: auto;
   float: left;
-  background: url(top-bg.jpg)) no-repeat;
+  background-image: url(top-bg.jpg);
+  background-repeat: no-repeat;
   width: 461px;
   height: 322px;
   margin-left: 32px;
