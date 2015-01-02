@@ -28,6 +28,7 @@ ADMIN_EMAIL: user@example.com
 ADMIN_PASSWORD: changeme
 DB_USER: Changeme
 DB_PASS: Changeme
+SECRET_KEY_BASE: Changeme # populate this by running 'rake secret' and pasting the string here
 
 #production values
 production:
@@ -40,3 +41,4 @@ production:
   ADMIN_PASSWORD: changeme
   DB_USER: Changeme
   DB_PASS: Changeme
+  SECRET_KEY_BASE: Changeme # populate this by running 'rake secret' and pasting the string here
