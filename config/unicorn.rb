@@ -14,7 +14,7 @@ if Rails.env.production?
 # Set up socket location
   listen "#{shared_dir}/sockets/unicorn.sock", :backlog => 64
 
-# Loging
+# Logging
   stderr_path "#{shared_dir}/log/unicorn.stderr.log"
   stdout_path "#{shared_dir}/log/unicorn.stdout.log"
 
