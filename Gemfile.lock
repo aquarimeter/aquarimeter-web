@@ -45,8 +45,15 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bitters (0.10.1)
+      bourbon (>= 3.2)
+      sass (>= 3.2)
+      thor
     bootstrap-sass (3.3.1.0)
       sass (~> 3.2)
+    bourbon (4.1.0)
+      sass (~> 3.3)
+      thor
     builder (3.2.2)
     capistrano (3.3.5)
       capistrano-stats (~> 1.1.0)
@@ -205,6 +212,9 @@ GEM
       railties (> 3.1, < 5)
     multi_json (1.10.1)
     mysql2 (0.3.17)
+    neat (1.7.1)
+      bourbon (>= 4.0)
+      sass (>= 3.3)
     nenv (0.1.1)
     nested_form (0.3.2)
     net-scp (1.2.1)
@@ -436,7 +446,9 @@ DEPENDENCIES
   ajax-datatables-rails
   better_errors
   binding_of_caller
+  bitters
   bootstrap-sass
+  bourbon
   capistrano
   capistrano-bundler
   capistrano-rails
@@ -470,6 +482,7 @@ DEPENDENCIES
   mini_magick
   morrisjs-rails
   mysql2
+  neat
   open4
   pry-rails
   pry-rescue
