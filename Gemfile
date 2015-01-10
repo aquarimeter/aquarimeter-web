@@ -49,7 +49,9 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'mail_view'
 gem 'shareable'
-
+gem "bitters"
+gem "bourbon"
+gem "neat"
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms => [:mri_21]
