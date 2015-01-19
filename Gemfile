@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.2.0'
 gem 'rails', '4.1.8'
 gem "rack-protection"
-
+gem 'pg', group: :production
 gem 'sqlite3'
 gem 'mysql2' # Mariadb for db
 gem 'turbolinks'
