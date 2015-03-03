@@ -12,7 +12,6 @@ gem 'spring', group: :development
 gem 'carrierwave'
 gem "mini_magick"
 gem "letter_opener"
-gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro' #, '>= 1.0.0.rc1'
 gem 'high_voltage'
