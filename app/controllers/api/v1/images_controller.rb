@@ -7,6 +7,21 @@ class Api::V1::ImagesController < Api::V1::BaseController
     @image = Image.new(:aquarium_id => Aq)
   end
 
+  def index
+    @images = Image.all
+
+    respond_to do |format|
+      format.html # index.html.slim
+      format.json { render json: @images }
+    end
+  end
+
+  def show
+    respond_to do |format|
+      format.html # show.html.slim
+      format.json { render json: @image }
+    end
+  end
 
   # taken from http://ograycoding.wordpress.com/2012/07/03/api-upload-with-carrierwave/
   # assumes the following json
@@ -58,7 +73,7 @@ class Api::V1::ImagesController < Api::V1::BaseController
       else
         respond_with do |format|
           format.html { render :action, 'edit' }
-          format.json { render json: @image.errors, :status => :unprocessable_entity }
+          format.json { render json: @image.errors, status: :unprocessable_entity }
         end
       end
     end

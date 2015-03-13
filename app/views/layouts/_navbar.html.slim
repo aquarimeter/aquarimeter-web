@@ -1,16 +1,36 @@
-#header
-  #logo
-    = image_tag "logo.jpg", width: "108", height: "97", alt: "Aquarimeter"
-  #title.titletext
-    | Aquarimeter Web
-  #navbar
-    #home
-      = link_to "Home", root_path
-    #login
-      - if not user_signed_in?
-        = link_to "Login", new_session_path(resource_name)
-      - else
-        = link_to("Logout", destroy_user_session_path, :method => :delete)
-    #register
-      = link_to "Register", new_user_registration_path if not user_signed_in?
-  .clear
+/#header
+/  #logo
+/
+/  #title.titletext
+/    | Aquarimeter Web
+/  #navbar
+/    #home
+/      = link_to "Home", root_path
+/    #login
+/      - if not user_signed_in?
+/        = link_to "Login", new_session_path(resource_name)
+/      - else
+/        = link_to("Logout", destroy_user_session_path, :method => :delete)
+/    #register
+/      = link_to "Register", new_user_registration_path if not user_signed_in?
+/  .clear
+
+header.centered-navigation role="banner"
+  .centered-navigation-wrapper
+    a.mobile-logo href="javascript:void(0)"
+      img alt=("Logo image") src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" /
+    a#js-centered-navigation-mobile-menu.centered-navigation-mobile-menu href="javascript:void(0)"  MENU
+    nav role="navigation"
+      ul#js-centered-navigation-menu.centered-navigation-menu.show
+        li.nav-link.logo
+          = image_tag "logo.jpg", alt: "Aquarimeter"
+        li.nav-link
+          = link_to "Home", root_path
+        li.nav-link
+          - if not user_signed_in?
+              = link_to "Login", new_session_path(resource_name)
+          - else
+              = link_to("Logout", destroy_user_session_path, :method => :delete)
+        -if not user_signed_in?
+          li.nav-link
+            = link_to "Register", new_user_registration_path

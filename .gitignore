@@ -78,3 +78,6 @@ npm-debug.log
 
 # Environment files that may contain sensitive data
 application.yml
+
+public/uploads/
+

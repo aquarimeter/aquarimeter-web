@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 class ImagesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   before_filter :set_aquarium
@@ -99,3 +100,4 @@ class ImagesController < ApplicationController
     end
   end
 end
+

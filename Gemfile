@@ -5,6 +5,7 @@ gem "rack-protection"
 gem 'pg', group: :production
 gem 'sqlite3'
 gem 'mysql2' # Mariadb for db
+gem 'pg'
 gem 'turbolinks'
 gem 'jbuilder' #, '~> 2.0'
 gem 'sdoc', group: :doc
@@ -26,6 +27,12 @@ gem 'upmin-admin'
 gem 'active_model_serializers'
 gem 'devise-token_authenticatable'
 gem 'schema_to_scaffold'
+gem 'will_paginate'
+gem 'schema_to_scaffold'
+# gem 'ember-rails'
+# gem 'emblem-rails'
+# gem 'ember-source', '~> 1.9.0'
+# gem 'ember_script-rails', :github => 'ghempton/ember-script-rails'
 gem 'morrisjs-rails'
 gem 'raphael-rails'
 gem 'sidekiq'
@@ -33,7 +40,6 @@ gem 'sinatra', '>= 1.3.0', :require => nil
 gem 'mina'
 gem 'mina-sidekiq', :require => false
 gem 'mina-unicorn', :require => false
-gem 'open4'
 gem 'gaffe'
 gem 'sass'
 gem 'sass-rails' #, '~> 4.0.3'
@@ -61,7 +67,7 @@ group :development do
   gem 'capistrano-rvm' #, '~> 0.1.1'
   gem 'guard-bundler'
   gem 'guard-rails'
-  gem 'guard-rspec'  
+  gem 'guard-rspec'
   gem 'mailcatcher'
   gem 'quiet_assets'
   gem 'rb-fchange', :require => false

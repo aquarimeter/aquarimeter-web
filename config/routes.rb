@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'images/create'
+
+  get 'images/update'
+
+  get 'images/show'
+
+  get 'images/destroy'
+
+devise_for :user
+
   namespace :api do
     namespace :v1, :format => :json do
       devise_for :user, {registration: "api/registration", sessions: "api/sessions"}
@@ -24,8 +34,6 @@ Rails.application.routes.draw do
   require 'sidekiq/web'
 
   mount Sidekiq::Web => '/sidekiq'
-
-  devise_for :user
   mount MailPreview => 'mail_view' if Rails.env.development?
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'aquariums#index'

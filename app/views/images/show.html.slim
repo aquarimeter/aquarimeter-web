@@ -51,12 +51,4 @@
         #snapshots
           #header-snapshots
             | Snapshots
-          = paginate(@images, :theme => 'twitter-bootstrap',
-                                     :pagination_class => "pagination-small pagination-centered",  :remote => true)
-          #snapshots-preview
-            -if @images
-              -for image in @images
-                #box
-                  = image.created_at.strftime('%b %e %Y %H:%M:%S')
-                  = image_tag(image.image_url(:thumb).to_s)
-                  = facebook_button
+
