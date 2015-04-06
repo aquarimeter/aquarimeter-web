@@ -5,7 +5,6 @@ gem "rack-protection"
 gem 'pg', group: :production
 gem 'sqlite3'
 gem 'mysql2' # Mariadb for db
-gem 'pg'
 gem 'turbolinks'
 gem 'jbuilder' #, '~> 2.0'
 gem 'sdoc', group: :doc
@@ -26,7 +25,6 @@ gem 'unicorn-rails'
 gem 'upmin-admin'
 gem 'active_model_serializers'
 gem 'devise-token_authenticatable'
-gem 'schema_to_scaffold'
 gem 'will_paginate'
 gem 'schema_to_scaffold'
 # gem 'ember-rails'
@@ -50,7 +48,6 @@ gem 'goldiloader'
 gem 'jquery-datatables-rails'
 gem 'ajax-datatables-rails'
 gem 'simple_form_fancy_uploads'
-gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'mail_view'
 gem 'shareable'
@@ -90,3 +87,4 @@ group :test do
   gem 'shoulda'
   gem 'shoulda-matchers'
 end
+
